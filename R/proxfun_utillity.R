@@ -64,7 +64,7 @@ coerce_result <- function(result, value, graph){
     g <- igraph::graph_from_adjacency_matrix(result, weighted = TRUE, add.colnames = NA,
                          mode = ifelse(igraph::is_directed(graph), "directed", "undirected"))
     # empty original graph and add weighted graph to preserve structure
-    g <- igraph::graph.union(igraph::delete.edges(graph, igraph::E(graph)), g,
+    g <- igraph::union(igraph::delete_edges(graph, igraph::E(graph)), g,
                      byname = FALSE)
     return(g)
   }
