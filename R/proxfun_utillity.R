@@ -21,7 +21,7 @@ check_vertices <- function(graph, v){
       stop("Vertex id out of range")
     v
   } else if (is.character(v)){
-    if (!igraph::is.named(graph))
+    if (!igraph::is_named(graph))
       stop("Graph does not have vertex names. Provide vertex IDs")
     v <- match(v, igraph::V(graph)$name)
     if (any(is.na(v)))
